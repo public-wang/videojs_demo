@@ -1,0 +1,198 @@
+@charset "utf-8";
+/*!VIPABC | Author by Mike Li*/
+/*!v3.0 | 2016-5-23*/
+/*!License: vipabc.com*/
+
+
+/* 自定义单选组样式 */
+.free-form-sex{float:right;width:100%;height:35px;}
+.free-form-sex dt, .free-form-sex dd{float:left;}
+.free-form-sex dt{margin:0 6px 0 10px;}
+.free-form-sex dt{
+	line-height:33px;
+	color:#fff;
+	font-size:14px;
+}
+label.sex-wrap{
+	display:block;
+	width:100%;
+	height:33px;
+	line-height:33px;
+	color:#999;
+	font-size:14px;
+	text-align:center;
+	text-indent:0;
+}
+.radio_wrap{
+	display: inline-block;
+	width: 30px;
+	height: 33px;
+	line-height:33px;
+	border:solid 1px #fff;
+	color:#999;
+	background-color:#fff;
+	text-align:center;
+}
+.radio_on_wrap{color:#fff;background-color:#8e8f8f; border-color:#8e8f8f;}
+.radio_on_wrap label.sex-wrap{color:#fff;}
+.radio_wrap input{
+	display:none;
+	width: 100%;
+	height:33px;
+	filter:alpha(opacity=0);
+	opacity: 0;
+	-moz-opacity:0;
+	cursor: pointer;
+	vertical-align: -4px;
+}
+/* 自定义单选组样式 end */
+
+/* 下拉菜单样式 */
+
+.select_wrap{
+	float:right;
+	position: relative;
+	display: inline-block;
+	box-sizing:border-box;
+	width: 100%;
+	height: 35px;
+	line-height: 35px;
+	border:solid 1px #bfbfbf;
+	background-color: #fff;
+	cursor: pointer;
+	text-align:left;
+	-webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+	z-index:200;
+	border-radius:2px;
+}
+
+.select_wrap:hover,.select_wrap:focus{
+	color:#000;
+	border-color:#999;
+}
+
+.select_wrap select{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	border: none;
+	cursor: pointer;
+}
+.select_list{
+	display: none;
+	position: absolute;
+	/*display: inline-block;*/
+	width: 100%;
+	max-height: 350px;
+	top: 32px;
+	left: 0;
+	z-index: 100;
+	overflow-y:auto;
+	border: solid 1px #dcdcdc;
+	border-top:none;
+	overflow:auto;
+	box-sizing:border-box;
+	box-shadow:0 0 1px 0 #999;
+}
+
+.select_list dl, .select_list dl dt, .select_list dl dd{
+	float: left;
+	width: 100%;
+	background-color: #fff;
+}
+.select_list dl dt, .select_list dl dd{
+	line-height: 27px;
+	margin:0;
+	padding:0;
+	color: #666;
+	font-size:13px;
+}
+.select_list dl dt{
+	border-top: solid 1px #fff;
+	border-bottom: solid 1px #fff;
+	background-color: #dcdcdc;
+	text-indent: 5px;
+}
+
+.select_list dl dd{
+	text-indent: 20px;
+}
+
+
+
+.select_list dl dd.selected{
+	color: #fff;
+	background-color: #8e8f8f;
+}
+.select_list dl dd:hover{
+	color: #fff;
+	background-color: #8e8f8f;
+}
+
+.select_current{
+	float: left;
+	display:inline-block;
+	width:100%;
+	height:35px;
+	text-indent:8px;
+	*text-indent:8px;
+	color:#999;
+	font-size:14px;
+	border-radius:2px;
+}
+
+.select_btn{
+	position: absolute;
+	display: inline-block;
+	width: 31px;
+	height: 31px;
+	top: 0;
+	right: 0;
+	margin: 1px;
+	color: #fff;
+	background: url("http://source.vipabc.com/Ext/images/website/share/form/form-arrow.png") no-repeat center center;
+	cursor: pointer;
+}
+
+.select_btn_on{
+	background:url("http://source.vipabc.com/Ext/images/website/share/form/form-arrow-on.png") no-repeat center center;
+}
+
+
+/*-------------------- Form validate style ----------------------*/
+.linkagePage-form ul li p, .form-wrap ul li p, .submit-wrap{
+	position:relative;
+}
+.meg-error{
+	display:inline-block;
+	position:absolute;
+	line-height:32px;
+	right:1px;
+	top:1px;
+	z-index:10;
+	color:#f65662;
+	background-color:#fff;
+}
+.float-lay-form .meg-error{ line-height:26px; font-size:13px;}
+
+
+/*-------------------- Form validate style end ----------------------*/
+
+
+
+/* 下拉菜单样式 end */
+
+@media all and (max-width:680px){
+
+/*.free-form-sex dt{margin:0 6px 0 8px;}*/
+.radio_wrap{border-color:#8e8f8f;}
+.free-form-sex dt{color:#999;}
+
+}
