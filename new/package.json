@@ -1,0 +1,57 @@
+{
+  "name": "datamap",
+  "version": "1.0.0",
+  "description": "MD Datamap project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vipabc",
+    "datamap",
+    "md"
+  ],
+  "author": "chris ye",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
+    "debug": "^2.2.0",
+    "leafjs": "^1.0.2",
+    "lodash": "^3.10.1",
+    "moment": "^2.12.0",
+    "querystring": "^0.2.0",
+    "read-yaml": "^1.0.0",
+    "node-schedule": "^1.1.1",
+    "request": "^2.67.0",
+    "webpack-stream": "^3.1.0"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "concur-gulp-rename": "^1.0.0",
+    "css-loader": "^0.23.1",
+    "del": "^2.2.0",
+    "dust-loader": "^1.0.1",
+    "dustjs-linkedin": "^2.7.2",
+    "file-loader": "^0.8.5",
+    "glob": "^6.0.3",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-gzip": "^1.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-size": "^2.0.0",
+    "gulp-tinypng": "^1.0.2",
+    "image-maxsize-webpack-loader": "^0.1.1",
+    "image-webpack-loader": "^1.6.2",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.4.2",
+    "node-schedule": "^1.1.1",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9"
+  }
+}
