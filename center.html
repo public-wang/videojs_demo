@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>LightBox</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+  <style>
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      body{
+        font-family:"Microsoft Yahei","Hiragino Sans GB", Arial,Lucida,Verdana,SimSun,Helvetica,sans-serif;
+      }
+      input[type=text],input[type=button]{
+      	-webkit-appearance: none;
+      	box-shadow: none;
+      }
+      :focus{outline:0;}
+      .share-wrap a:hover{opacity: 0.8;}
+      .vjr-lightBox-bg{
+         position: fixed;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.85);
+      }
+      .vjr-lightBox-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow: auto;
+      }
+      .vjr-lightBox{
+        width: 90%;
+        max-height: 90%;
+        margin: 5% 0;
+        z-index: 10;
+        border-radius: 20px;
+      }
+      .vjr-lightBox .item-title{
+        position: relative;
+        padding: 15px 0;
+        width: 100%;
+        color: #fff;
+        background-color: #f74c4c;
+        text-align: center;
+        font-size: 17px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+      }
+      .vjr-lightBox .item-title span{
+        position: absolute;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        right: 5px;
+        top: 6px;
+        z-index: 10;
+        font-size: 28px;
+        text-align: center;
+        color: #fff;
+        cursor: pointer;
+      }
+      .vjr-lightBox .item-content{
+        width: 90%;
+        padding: 20px 5% 30px 5%;
+        font-size: 14px;
+        line-height: 25px;
+        color: #333;
+        background-color: #fff;
+        margin-bottom: 30px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+      .vjr-lightBox .item-content .item-detail p{
+        padding-bottom: 8px;
+      }
+      .vjr-lightBox .item-content h4{
+        padding-bottom: 20px;
+        text-align: center;
+        font-size: 16px;
+      }
+      .vjr-lightBox .item-content .btn-wrap{
+        padding-top: 20px;
+        text-align: center;
+      }
+      .vjr-lightBox .item-content .btn-wrap label{
+        font-size: 13px;
+        color: #333;
+        cursor: pointer;
+        font-weight: bolder;
+      }
+      .vjr-lightBox .item-content .btn-wrap label input{
+        vertical-align: -2px;
+        margin-right: 3px;
+      }
+      .vjr-lightBox .item-content .btn-wrap button{
+        width: 200px;
+        margin: 0 auto;
+        margin-top: 12px;
+        line-height: 40px;
+        border: 0;
+        border-bottom: solid 6px #d70c18;
+        border-radius: 25px;
+        color: #fff;
+        background-color: #f74c4c;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      @media all and (min-width:550px) {
+
+        .vjr-lightBox .item-title{font-size: 24px}
+        .vjr-lightBox .item-content h4{font-size: 22px;}
+      }
+  </style>
+
+</head>
+<body>
+
+<div class="vjr-lightBox-bg"></div>
+<div class="vjr-lightBox-wrap">
+<div class="vjr-lightBox">
+  <div class="item-title">公告 <span id="vjr-lightBox-close">×</span></div>
+  <div class="item-content">
+    <h4>课程时间全新升级 趣学英语更高效</h4>
+    <div class="item-detail">
+ <p>亲爱的客户：</p>
+<p>累积vipjr客户超过十年的高效学习轨迹，为提供更多元有效的在线学习，于2017年6月8日做如下课程服务调整:</p>
+<p>• 更高效的学习规划：购买"30分钟一对一"服务的客户，一对一课程时间将调整为25分钟，开课时间升级为整点及半点，保持刚刚好的注意力，达成最有效的学习效果。</p>
+<p>• 更丰富的课程内容：购买"随选快课"服务的客户，20分钟随选快课延长至25分钟，维持扣除0.5堂囊括更多新鲜主题，随身学习不打烊。</p>
+<p>• 更充足的学习机会：购买 "30分钟一对一"服务的客户，我们将于2017年6月1日0点起开始计算您的剩余堂数，以剩余堂数的<span style="color:red">1.2倍</span>于2017年6月8日前返还于您账户中。在计算前，系统会于2017年6月1日0点将您2017年6月8日00:30及之后的一对一课程先行取消以便纳入剩余堂数计算。 6月8日00:30及之后的一对一课程将全面为25分钟一堂课，完成结算即可重新预约，若有需要我们协助订课，可致电客服4006-30-30-22。</p>
+<p>vipjr致力于以更丰富的课程内容、更自主的时间选择，让孩子随时随心，学习更高效！</p>
+    </div>
+    <div class="btn-wrap">
+        <label>点击【确定】同意上述服务升级及转换方案</label>
+      <p><button id="vjr-lightBox-rule-confirm">确定</button></p>
+    </div>
+  </div>
+  <div>
+</div>
+
+<!--<script src="//source.vipabc.com/Ext/js/lib/jquery-1.11.1.min.js"></script>-->
+    <script src="../Scripts/jquery-1.12.4.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        //fixed footer and stop scale the screen
+        if (navigator.userAgent.match(/mobile/i) && !navigator.userAgent.match(/iPad/i)) {
+            //判断手机横竖屏状态：
+            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () { }, false);
+        }
+  // close the light-Box
+  $('#vjr-lightBox-close').click(function(){
+      $('.vjr-lightBox-bg, .vjr-lightBox').fadeOut();
+      window.location.href = "../Home/BookingClass";
+  });
+
+  // confirm the light-Box rules
+  $('#vjr-lightBox-rule-confirm').click(function(){
+    // console.log($('#vjr-lightBox-rule-check').is(':checked'));
+    //if(!$('#vjr-lightBox-rule-check').is(':checked')){
+      // uncheck the rule
+    //  alert("您还没有点击‘我已悉知并同意上述服务及升级及转换方案’");
+    //} else{
+      // close the light-Box
+      $.ajax({
+          type: "get",
+          url: "../V2Booking/SaveSupplement",
+          dataType: 'json',
+          // 允许携带证书
+          xhrFields: {
+              withCredentials: true
+          },
+          // 允许跨域
+          crossDomain: true,
+          async: true,
+          success: function (data) {
+              //if (data.Data) {
+             
+          },
+          error: function () {
+              //alert("系统错误");
+          }
+      });
+      $('.vjr-lightBox-bg, .vjr-lightBox').fadeOut();
+      window.location.href = "../Home/BookingClass";
+   // }
+
+    
+  });
+
+});
+</script>
+
+</body>
+</html>
