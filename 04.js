@@ -8,6 +8,10 @@ function foo(value, callback) {
   callback(null, value % 2);
 }
 
+setTimeout(()=>{
+  console.log('settimeout');
+}, 5)
+
 fs.stat('./a.txt', function statCallback1(err, stat) {
   if (stat) {
     foo(stat.size,function sizeCallback(error,evenorodd){
@@ -19,7 +23,7 @@ fs.stat('./a.txt', function statCallback1(err, stat) {
 fs.stat('./b.txt', function statCallback2(err, stat) {
   if (stat) {
     fs.readFile('./b.txt', function readFileCallback2(err, content) {
-      console.log(content);
+      console.log(content.toString());
     });
   }
 });
