@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>js屏蔽微信浏览器右上方分享按钮</title>
+        <meta name="keywords" content="js屏蔽微信分享,js屏蔽右上方按钮" />
+        <meta name="description" content="微信官网提供的js屏蔽微信分享按钮，只有在页面完全加载完才会起作用。因此为了不让用户分享当前页面，我们可自定义分享到其他页面，或一个空白页。" />
+    </head>
+    <body>
+        <p style="text-align: center;color:red;font-size:20px;margin-top: 120px">请用微信浏览器打开，并打开右上方按钮。分享到朋友圈试试。</p>
+    </body>
+    <script>
+        function onBridgeReady() {
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if (typeof WeixinJSBridge == "undefined") {
+            if (document.addEventListener) {
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            } else if (document.attachEvent) {
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        } else {
+            onBridgeReady();
+        }
+        
+    </script>
+
+</html>
